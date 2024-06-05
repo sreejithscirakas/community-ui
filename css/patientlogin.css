@@ -13,6 +13,15 @@
 #patient-login .top-logo {
     display: block;
 }
+.patlog-main{
+    width: 100%;
+    display: flex;
+}
+.patlog-content{
+    width:calc(100% - 260px);
+    height: calc(100vh - 160px);
+    display: flex;
+}
 .patlog-left{
 	width:70%;
 	background:#f4f2f7;
@@ -22,44 +31,48 @@
 	display: flex;
 }
 .patlog-right{
-	width:30%;
+	width:40%;
 	height: calc(100vh - 160px);
 	padding-top: 40px;
 }
-.patlog-left .menu-list{
+.patlog-sidemenu .menu-list{
 	background: #fff;
 	border-radius:20px;
 	padding:20px 0px;
 }
-.patlog-left #menu-content{
+.patlog-sidemenu #menu-content{
 	list-style: none;
 	padding:0;
 	margin-bottom: 0;
 }
-.patlog-left #menu-content li{
+.patlog-sidemenu #menu-content li{
     padding-left: 20px;
     margin-top: 10px;
     color:#c2c2c2;
 }
-.patlog-left #menu-content li a{
+.patlog-sidemenu #menu-content li a{
     color:#c2c2c2;
 }
-.patlog-left #menu-content li span{
+.patlog-sidemenu #menu-content li span{
     padding-left: 10px;
 }
-.patlog-left #menu-content .active{
+.patlog-sidemenu #menu-content .active{
 	border-left: solid 3px #0a1681;
 }
-.patlog-left #menu-content .active a{
+.patlog-sidemenu #menu-content .active a{
 	color: #0a1681;
 }
-.patlog-sidemenu{
-	display: flex;
-  	flex-direction: column;
-  	justify-content: space-between;
-  	width:260px;
-  	height:100%;
-  	overflow-y:auto;
+.patlog-sidemenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 260px;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    background: #f4f2f7;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .patlog-sidemenu .patlog-prof, 
 .patlog-sidemenu .menu-list, 
@@ -143,9 +156,13 @@
     border-radius: 50px;
     cursor: pointer;
 }
-.patlog-metrics{
-	width: calc(100% - 260px);
-	padding: 0px 20px 0px 40px;
+.patlog-metrics {
+    width: 65%;
+    height: calc(100vh - 160px);
+    padding: 20px 30px 20px 30px;
+    background: #f4f2f7;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .metrics-heading{
 	color:#0a1681;
