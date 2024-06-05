@@ -23,237 +23,227 @@
       <link rel="stylesheet" href="css/responsive.css">
 
    </head>
-   <body class="sidebar-main-menu">
-      <!-- loader Start -->
-      <div id="loading">
-         <div id="loading-center">
+<body class="patlog-body">
+   <div id="patient-login">
+      <!-- TOP Nav Bar -->
+      <div class="iq-top-navbar header-top-sticky">
+         <div class="iq-navbar-custom">
+            <div class="iq-sidebar-logo">
+               <div class="top-logo">
+                  <a href="index.html" class="logo">
+                  <img src="images/logo_dark.webp" class="img-fluid" alt="">
+                  <span></span>
+                  </a>
+               </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light p-0">
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto navbar-list">
+                     <li class="nav-item">
+                        <a href="#" class="search-toggle iq-waves-effect">
+                        <i class="fa fa-bell"></i>
+                        <span class="bg-danger dots"></span>
+                        </a>
+                        <div class="iq-sub-dropdown">
+                           <div class="iq-card shadow-none m-0">
+                              <div class="iq-card-body p-0 ">
+                                 <div class="bg-primary p-3">
+                                    <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <ul class="navbar-list">
+                  <li>
+                     <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
+                        <img src="images/user/luca.jpg" class="img-fluid rounded mr-3" alt="user">
+                        <div class="caption">
+                           <!-- <span class="font-size-12">User</span> -->
+                           <!-- <h6 class="mb-0 line-height">Luca</h6> -->
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </nav>
          </div>
       </div>
-      <!-- loader END -->
-      <!-- Wrapper Start -->
-      <div class="wrapper">
-         <!-- Page Content  -->
-         <div id="patient-login" class="content-page">
-            <!-- TOP Nav Bar -->
-            <div class="iq-top-navbar header-top-sticky">
-               <div class="iq-navbar-custom">
-                  <div class="iq-sidebar-logo">
-                     <div class="top-logo">
-                        <a href="index.html" class="logo">
-                        <img src="images/logo_dark.webp" class="img-fluid" alt="">
-                        <span></span>
-                        </a>
-                     </div>
-                  </div>
-                  <nav class="navbar navbar-expand-lg navbar-light p-0">
-                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto navbar-list">
-                           <li class="nav-item">
-                              <a href="#" class="search-toggle iq-waves-effect">
-                              <i class="fa fa-bell"></i>
-                              <span class="bg-danger dots"></span>
-                              </a>
-                              <div class="iq-sub-dropdown">
-                                 <div class="iq-card shadow-none m-0">
-                                    <div class="iq-card-body p-0 ">
-                                       <div class="bg-primary p-3">
-                                          <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
+      <!-- TOP Nav Bar END -->
+      <div class="patient_login_main">
+         <div class="row">
+            <div class="col-sm-12 col-lg-12">
+               <div class="iq-card mb-0">
+                  <div class="iq-card-body d-flex">
+                     <div class="patlog-main">
+                        <div class="patlog-sidemenu">
+                           <div class="patlog-prof">
+                              <div class="patlog-profpic1">
+                                 <div class="patlog-profpic">
+                                    <img src="images/user/luca.jpg" class="img-fluid rounded" alt="user">
+                                 </div>
+                              </div>
+                              <div class="patlog-proftxt">
+                                 <h6>Welcome</h6>
+                                 <p>Luca</p>
+                              </div>
+                           </div>
+                           <div class="menu-list">
+                              <ul id="menu-content" class="menu-content">
+                                 <li class="active">
+                                    <a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fa fa-stethoscope"></i> <span>Medication</span></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fa fa-comments"></i> <span>Chat</span></a>
+                                 </li>
+                                 <li>
+                                    <a href="#"><i class="fa fa-line-chart"></i> <span>Analytics</span></a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="patlog-chat">
+                              <p>Chat</p>
+                              <ul class="iq-chat-ui nav flex-column nav-pills">
+                                 <li>
+                                    <a data-toggle="pill" href="#chatbox">
+                                       <div class="d-flex align-items-center">
+                                          <div class="avatar mr-2">
+                                             <img src="images/user/1.jpg" alt="img" class="avatar-30 rounded">
+                                             <span class="avatar-status"><i class="fa fa-circle text-success"></i></span>
+                                          </div>
+                                          <div class="chat-sidebar-name mr-2">
+                                             <h6 class="mb-0 text-nowrap">discussion about procedures</h6>
+                                             <span class="text-nowrap">Johannes Breuer and 4 others.</span>
+                                          </div>
+                                          <div class="chat-meta float-right text-center">
+                                             <div class="chat-msg-counter text-white">20</div>
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="patlog-content">
+                           <div class="patlog-metrics">
+                              <div class="patlog-metrics-bd">
+                                 <h2 class="metrics-heading">Enhance your health</h2>
+                                 <div class="metrics-add-btn">
+                                    <img src="images/plus-solid.svg" class="img-fluid" alt="">
+                                 </div>
+                              </div>
+                              <div class="patlog-clinicalinfo">
+                                 <div class="patlog-weight">
+                                    <div class="patlogbg">
+                                       <h4>80</h4>
+                                       <h6>kg</h6>
+                                       <div class="patlog-cli_icon">
+                                          <img src="images/patlog-weight.svg" class="img-fluid" alt="">
+                                       </div>
+                                    </div>
+                                    <p class="patlog-cli_label">Weight</p>
+                                 </div>
+                                 <div class="patlog-height">
+                                    <div class="patlogbg">
+                                       <h4>170</h4>
+                                       <h6>cm</h6>
+                                       <div class="patlog-cli_icon">
+                                          <img src="images/patlog-height.svg" class="img-fluid" alt="">
+                                       </div>
+                                    </div>
+                                    <p class="patlog-cli_label">Height</p>
+                                 </div>
+                                 <div class="patlog-bmi">
+                                    <img src="images/chart_latest.svg" class="img-fluid" alt="">
+                                 </div>
+                              </div>
+                              <div class="patlog-analytics">
+                                 <div class="patlog-analytics-body">
+                                    <ul class="nav nav-pills m-0 mb-3">
+                                       <li class="nav-item" >
+                                          <a class="nav-link active">Blood pressure systolic</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link">Blood pressure diastolic</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link">Heart rate</a>
+                                       </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                       <div class="tab-pane">Graph 1</div>
+                                       <div class="tab-pane">Graph 2</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="patlog-right">
+                              <div class="patlog-hrbp">
+                                 <div class="patlog-hr">
+                                    <div class="patlog-hrbd">
+                                       <div class="patlog-hricon">
+                                          <img src="images/hr.svg" class="img-fluid" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="patlog-hrvalue">
+                                       <h3>98 <span class="minval">bpm</span></h3>
+                                       <h4>Heart Rate</h4>
+                                       <div class="patlog-hrstatus">Normal</div>
+                                    </div>
+                                 </div>
+                                 <div class="patlog-bp">
+                                    <div class="patlog-bpbd">
+                                       <div class="patlog-bpicon">
+                                          <img src="images/bp.svg" class="img-fluid" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="patlog-bpvalue">
+                                       <h3>102 / 72 <span class="minval">mmhg</span></h3>
+                                       <h4>Blood Pressure</h4>
+                                       <div class="patlog-bpstatus">Normal</div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="patlog-notes">
+                                 <div class="patlog-reviewnotes">
+                                    <h4>Messages from Nurse Hanna</h4>
+                                    <div class="patlog-reviewnotesbd rvn-bg">
+                                       <div class="patlog-reviewnotesbadge">
+                                          <h5>MAR</h5>
+                                          <h6>2024</h6>
+                                       </div>
+                                       <div class="patlog-reviewnotestxt">
+                                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="patlog-reviewnotes">
+                                    <h4>Review Note from Rehab Nurse</h4>
+                                    <div class="patlog-reviewnotesbd msg-bg">
+                                       <div class="patlog-reviewnotesbadge">
+                                          <h5>JAN</h5>
+                                          <h6>2024</h6>
+                                       </div>
+                                       <div class="patlog-reviewnotestxt">
+                                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                           </li>
-                        </ul>
+                           </div>
+                        </div>
                      </div>
-                     <ul class="navbar-list">
-                        <li>
-                           <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                              <img src="images/user/luca.jpg" class="img-fluid rounded mr-3" alt="user">
-                              <div class="caption">
-                                 <!-- <span class="font-size-12">User</span> -->
-                                 <!-- <h6 class="mb-0 line-height">Luca</h6> -->
-                              </div>
-                           </a>
-                        </li>
-                     </ul>
-                  </nav>
-               </div>
-            </div>
-            <!-- TOP Nav Bar END -->
-
-            <div class="patient_login_main">
-            	<div class="row">
-                  <div class="col-sm-12 col-lg-12">
-                		<div class="iq-card mb-0">
-                    		<div class="iq-card-body d-flex">
-                    			<div class="patlog-left">
-                    				<div class="patlog-sidemenu">
-                    					<div class="patlog-prof">
-                    						<div class="patlog-profpic1">
-	                    						<div class="patlog-profpic">
-	                    							<img src="images/user/luca.jpg" class="img-fluid rounded" alt="user">
-	                    						</div>
-	                    					</div>
-                    						<div class="patlog-proftxt">
-	                    						<h6>Welcome</h6>
-	                    						<p>Luca</p>
-                    						</div>
-                    					</div>
-	                    				<div class="menu-list">
-								            <ul id="menu-content" class="menu-content">
-								                <li class="active">
-								                  <a href="#"><i class="fa fa-home"></i> <span>Dashboard</span></a>
-								                </li>
-								                <li>
-								                  <a href="#"><i class="fa fa-stethoscope"></i> <span>Medication</span></a>
-								                </li>
-								                <li>
-								                  <a href="#"><i class="fa fa-comments"></i> <span>Chat</span></a>
-								                </li>  
-								                <li>
-								                  <a href="#"><i class="fa fa-line-chart"></i> <span>Analytics</span></a>
-								                </li>
-								            </ul>
-									    </div>
-								    	<div class="patlog-chat">
-									    	<p>Chat</p>
-									    	<ul class="iq-chat-ui nav flex-column nav-pills">
-		                                        <li>
-			                                       	<a data-toggle="pill" href="#chatbox">
-			                                            <div class="d-flex align-items-center">
-			                                                <div class="avatar mr-2">
-			                                                   <img src="images/user/1.jpg" alt="img" class="avatar-30 rounded">
-			                                                   <span class="avatar-status"><i class="fa fa-circle text-success"></i></span>
-			                                                </div>
-			                                                <div class="chat-sidebar-name mr-2">
-			                                                   <h6 class="mb-0 text-nowrap">discussion about procedures</h6>
-			                                                   <span class="text-nowrap">Johannes Breuer and 4 others.</span>
-			                                                </div>
-			                                                <div class="chat-meta float-right text-center">
-			                                                   <div class="chat-msg-counter text-white">20</div>
-			                                                </div>
-			                                            </div>
-			                                       	</a>
-		                                        </li>
-		                                    </ul>
-								    	</div>
-									</div>
-									<div class="patlog-metrics">
-										<div class="patlog-metrics-bd">
-											<h2 class="metrics-heading">Enhance your health</h2>
-											<div class="metrics-add-btn">
-												<img src="images/plus-solid.svg" class="img-fluid" alt="">
-											</div>
-										</div>
-										<div class="patlog-clinicalinfo">
-											<div class="patlog-weight">
-												<div class="patlogbg">
-													<h4>80</h4>
-													<h6>kg</h6>
-													<div class="patlog-cli_icon">
-														<img src="images/patlog-weight.svg" class="img-fluid" alt="">
-													</div>
-												</div>
-												<p class="patlog-cli_label">Weight</p>				
-											</div>
-											<div class="patlog-height">
-												<div class="patlogbg">
-													<h4>170</h4>
-													<h6>cm</h6>
-													<div class="patlog-cli_icon">
-														<img src="images/patlog-height.svg" class="img-fluid" alt="">
-													</div>										
-												</div>
-												<p class="patlog-cli_label">Height</p>
-											</div>
-											<div class="patlog-bmi">
-												<img src="images/chart_latest.svg" class="img-fluid" alt="">
-											</div>
-										</div>
-										<div class="patlog-analytics">
-											<div class="patlog-analytics-body">
-					                            <ul class="nav nav-pills m-0 mb-3">
-					                              <li class="nav-item" >
-					                                 <a class="nav-link active">Blood pressure systolic</a>
-					                              </li>
-					                              <li class="nav-item">
-					                                 <a class="nav-link">Blood pressure diastolic</a>
-					                              </li>
-					                              <li class="nav-item">
-					                                 <a class="nav-link">Heart rate</a>
-					                              </li>
-					                            </ul>
-					                            <div class="tab-content">
-					                               <div class="tab-pane">Graph 1</div>
-					                               <div class="tab-pane">Graph 2</div>
-					                            </div>
-			                        		</div>
-										</div>
-									</div>
-                    			</div>
-                    			<div class="patlog-right">
-                    				<div class="patlog-hrbp">
-                    					<div class="patlog-hr">
-                    						<div class="patlog-hrbd">
-	                    						<div class="patlog-hricon">
-	                    							<img src="images/hr.svg" class="img-fluid" alt="">
-	                    						</div>
-	                    					</div>
-	                    					<div class="patlog-hrvalue">
-	                    						<h3>98 <span class="minval">bpm</span></h3>
-	                    						<h4>Heart Rate</h4>
-	                    						<div class="patlog-hrstatus">Normal</div>
-	                    					</div>
-                    					</div>
-                    					<div class="patlog-bp">
-                    						<div class="patlog-bpbd">
-	                    						<div class="patlog-bpicon">
-	                    							<img src="images/bp.svg" class="img-fluid" alt="">
-	                    						</div>
-	                    					</div>
-	                    					<div class="patlog-bpvalue">
-	                    						<h3>102 / 72 <span class="minval">mmhg</span></h3>
-	                    						<h4>Blood Pressure</h4>
-	                    						<div class="patlog-bpstatus">Normal</div>
-	                    					</div>
-                    					</div>
-                    				</div>
-                    				<div class="patlog-notes">
-                    					<div class="patlog-reviewnotes">
-                    						<h4>Messages from Nurse Hanna</h4>
-                    						<div class="patlog-reviewnotesbd rvn-bg">
-                    							<div class="patlog-reviewnotesbadge">
-                    								<h5>MAR</h5>
-                    								<h6>2024</h6>
-                    							</div>
-                    							<div class="patlog-reviewnotestxt">
-                    								Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    							</div>
-                    						</div>
-                    					</div>
-                    					<div class="patlog-reviewnotes">
-                    						<h4>Review Note from Rehab Nurse</h4>
-                    						<div class="patlog-reviewnotesbd msg-bg">
-                    							<div class="patlog-reviewnotesbadge">
-                    								<h5>JAN</h5>
-                    								<h6>2024</h6>
-                    							</div>
-                    							<div class="patlog-reviewnotestxt">
-                    								Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    							</div>
-                    						</div>
-                    					</div>
-                    				</div>
-                    			</div>
-                    		</div>
-                		</div>
                   </div>
                </div>
             </div>
-
-         </div>         
+         </div>
       </div>
-      <!-- Wrapper END -->
+   </div>
+</body>
 
       <!-- Optional JavaScript -->
       <script src="js/jquery.min.js"></script>
