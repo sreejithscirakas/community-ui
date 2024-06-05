@@ -223,7 +223,7 @@
 	width:100%;
 }
 .patlog-analytics{
-	height: calc(100% - 192px);
+	height: calc(100% - 290px);
 	padding:20px 0px;
 }
 .patlog-analytics .nav-pills .nav-link.active {
