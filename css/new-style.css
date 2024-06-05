@@ -1,0 +1,180 @@
+.patient-navbar {
+    background: #fff;
+    box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
+}
+.patient-log-main .navbar-brand{
+   color:#212c59;
+   font-size: 30px;
+   font-weight: 500;
+}
+#patient-log .nav-item{
+   padding: 0px 30px;
+}
+#patient-log .nav-item a{
+   color:#828282;;
+   font-size: 16px;
+}
+#patient-log .nav-item .active{
+   color: #212c59;
+    border-bottom: solid 2px #212c59;
+}
+.pat-section-main{
+  margin-top:110px;
+   padding: 0px 25px;
+}
+.patient-banner-txt h1{
+  color:#fff;
+}
+.patient-banner-txt p{
+   font-size: 1.25rem;
+    font-weight: 300;
+    color:#fff;
+}
+.patient-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc( 18vh - 0px);
+  background-image: linear-gradient(to bottom, rgb(0 0 0 / 44%), rgb(0 0 0 / 45%)), url(../images/summerbanner.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+}
+.patient-banner-txt {
+  padding: 20px 30px;
+  margin-bottom:0px;
+}
+.btn-switch-head{
+  color: #212c59;
+  font-weight: 400;
+  font-size: 2.500em;
+}
+.btn-switch-main{
+  display:flex;
+  flex-wrap: wrap;
+}
+.btn-switch-block{
+  width:50%;
+  padding:15px;
+  cursor: pointer;
+}
+.btn-switch-icon{
+  background:#fff;
+  padding:25px;
+  text-align: center;
+  border-radius: 25px;
+    border: none;
+    -webkit-box-shadow: 0px 4px 5px 1px rgba(175, 175, 175, 0.1);
+    box-shadow: 0px 4px 5px 1px rgba(175, 175, 175, 0.1);
+}
+.btn-switch-icon:hover{
+  background: #212c59;
+}
+.btn-switch-icon:hover i{
+  color:#fff;
+}
+.btn-switch-icon:hover .btn-switch-text {
+    color: #fff;
+}
+.btn-switch-icon i{
+  color: #212c59;
+  font-size: 20px;
+}
+.btn-switch-text {
+    text-align: center;
+    color: #212c59;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.dashboard-heading{
+  color: #212c59;
+  font-weight: 500;
+  font-size: 2.500em;
+  display: flex;
+  justify-content: center;
+}
+.pat-db-main{
+  background: #212c5952;
+  border-radius:10px;
+}
+.pat-db-main h3 {
+    color: #212c59;
+    font-weight: 500;
+    font-size: 1.7em;
+    text-align: center;
+    padding: 20px 20px;
+}
+.patdb-addicon{
+  display: flex;
+    justify-content: center;
+}
+.patdb-addicon i {
+  background: #212c59;
+    color: #fff;
+    border-radius: 50px;
+    padding: 14px 15px;
+    cursor: pointer;
+}
+.patdb_infobtn {
+    color: #fff;
+    background-color: #212c59;
+    border-color: #212c59;
+}
+.patdb_infobtn:hover {
+    color: #fff;
+    background-color: #212c59;
+    border-color: #212c59;
+    box-shadow: 0 0 5px #212e6663, 0 0 25px #212e6669;
+}
+.pdbleft-status{
+  text-align: center;
+}
+.pdbleft-status h2{
+  color:#000;
+}
+.pdb-footer{
+  text-align: center;
+  width:100%;
+  padding:20px;
+  background:#212c59;
+  color:#fff;
+  font-size: 14px;
+  margin-top:50px;
+}
+.pdbleft-status p{
+  color:#000;
+}
+.pat-db-info {
+    background: #C5E1A5;
+    border-radius: 10px;
+    color: #000;
+    padding: 15px;
+}
+.filter-last-week{
+  border: solid 1px #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+@media (max-width: 768px) {
+  .btn-switch-main{
+    flex-wrap: wrap;
+  }
+  .btn-switch-block{
+    width:50%;
+  }
+  .pat-db-main h3{
+    font-size: 1.5em;
+  }
+  .dashboard-heading{
+    font-size: 2.300em;
+  }
+  .pdbleft-status {
+    margin-top: 20px;
+  }
+  .patdb_infobtn{
+    margin-bottom:20px;
+  }
+}
