@@ -36,13 +36,16 @@
                   </a>
                </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light p-0">
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto navbar-list">
-                     <li class="nav-item">
+            <div id="patlog-wrapper-menu" class="patlog-wrapper-menu">
+              <i class="fa fa-list-ul"></i>
+            </div>
+            <nav class="navbar navbar-light p-0">
+               
+               <ul class="navbar-list patlog-navlist">
+                  <li class="nav-item">
                         <a href="#" class="search-toggle iq-waves-effect">
-                        <i class="fa fa-bell"></i>
-                        <span class="bg-danger dots"></span>
+                          <i class="fa fa-bell"></i>
+                          <span class="bg-danger dots"></span>
                         </a>
                         <div class="iq-sub-dropdown">
                            <div class="iq-card shadow-none m-0">
@@ -54,17 +57,11 @@
                            </div>
                         </div>
                      </li>
-                  </ul>
-               </div>
-               <ul class="navbar-list">
-                  <li>
-                     <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                        <img src="images/user/luca.jpg" class="img-fluid rounded mr-3" alt="user">
-                        <div class="caption">
-                           <!-- <span class="font-size-12">User</span> -->
-                           <!-- <h6 class="mb-0 line-height">Luca</h6> -->
-                        </div>
-                     </a>
+                  <li class="nav-item">
+                     <div href="#" class="patlog-logout">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <span>Logout</span>
+                      </a>
                   </li>
                </ul>
             </nav>
@@ -78,6 +75,7 @@
                   <div class="iq-card-body d-flex">
                      <div class="patlog-main">
                         <div class="patlog-sidemenu">
+                          <div class="patlog-hide-sidemenu"><i class="fa fa-close"></i></div>
                            <div class="patlog-prof">
                               <div class="patlog-profpic1">
                                  <div class="patlog-profpic">
@@ -130,11 +128,18 @@
                         </div>
                         <div class="patlog-content">
                            <div class="patlog-metrics">
+                            <h2 class="patlog-username">Welcome Luca!</h2>
                               <div class="patlog-metrics-bd">
+
                                  <h2 class="metrics-heading">Enhance your health</h2>
-                                 <div class="metrics-add-btn">
-                                    <img src="images/plus-solid.svg" class="img-fluid" alt="">
-                                 </div>
+                                 <div class="metrics-addedit-bd">
+                                   <div class="metrics-add-btn">
+                                      Add Metrics
+                                   </div>
+                                   <div class="metrics-add-btn">
+                                      Edit Metrics
+                                   </div>
+                                  </div>
                               </div>
                               <div class="patlog-clinicalinfo">
                                  <div class="patlog-weight">
@@ -217,7 +222,7 @@
                                           <h6>2024</h6>
                                        </div>
                                        <div class="patlog-reviewnotestxt">
-                                          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                                        </div>
                                     </div>
                                  </div>
@@ -246,11 +251,29 @@
 </body>
 
       <!-- Optional JavaScript -->
-      <script src="js/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
      
       <!-- Custom JavaScript -->
       <script src="js/custom.js"></script>
+
+      <script>
+        
+      $(document).ready(function() {
+        $('#patlog-wrapper-menu').on('click', function() {
+          $('.patlog-sidemenu').addClass('show-patlog-sidemenu');
+        });
+        $('.menu-content li').on('click', function() {
+          $('.patlog-sidemenu').removeClass('show-patlog-sidemenu');
+        });
+        $('.patient_login_main').on('click', function() {
+          $('.patlog-sidemenu').removeClass('show-patlog-sidemenu');
+        });
+        $('.patlog-hide-sidemenu').on('click', function() {
+          $('.patlog-sidemenu').removeClass('show-patlog-sidemenu');
+        });
+      });
+      </script>
 </html>
 
