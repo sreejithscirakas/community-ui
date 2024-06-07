@@ -1,7 +1,7 @@
-#patient-login{
-	margin-left: 0px;
-	padding: 100px 15px 0px 15px;
-	background: #f0f0f0;
+#patient-login {
+    margin-left: 0px;
+    padding: 100px 15px 0px 15px;
+    background: #f0f0f0;
     height: 100vh;
 }
 #patient-login .iq-top-navbar {
@@ -10,58 +10,50 @@
     border-radius: 0px;
     -webkit-border-radius: 0px;
 }
-#patient-login .iq-sidebar-logo, 
+#patient-login .iq-sidebar-logo,
 #patient-login .top-logo {
     display: block;
 }
-.patlog-main{
+.patlog-main {
     width: 100%;
     display: flex;
 }
-.patlog-content{
-    width:calc(100% - 260px);
+.patlog-content {
+    width: calc(100% - 260px);
     height: calc(100vh - 160px);
     display: flex;
 }
-.patlog-left{
-	width:70%;
-	background:#f4f2f7;
-	height: calc(100vh - 160px);
-	border-radius: 20px;
-	padding:20px;
-	display: flex;
+.patlog-right {
+    width: 40%;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
 }
-.patlog-right{
-	width:40%;
-	height: calc(100vh - 160px);
-	padding-top: 40px;
+.patlog-sidemenu .menu-list {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px 0px;
 }
-.patlog-sidemenu .menu-list{
-	background: #fff;
-	border-radius:20px;
-	padding:20px 0px;
+.patlog-sidemenu #menu-content {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
 }
-.patlog-sidemenu #menu-content{
-	list-style: none;
-	padding:0;
-	margin-bottom: 0;
-}
-.patlog-sidemenu #menu-content li{
+.patlog-sidemenu #menu-content li {
     padding-left: 20px;
     margin-top: 10px;
-    color:#c2c2c2;
+    color: #c2c2c2;
 }
-.patlog-sidemenu #menu-content li a{
-    color:#c2c2c2;
+.patlog-sidemenu #menu-content li a {
+    color: #c2c2c2;
 }
-.patlog-sidemenu #menu-content li span{
+.patlog-sidemenu #menu-content li span {
     padding-left: 10px;
 }
-.patlog-sidemenu #menu-content .active{
-	border-left: solid 3px #0a1681;
+.patlog-sidemenu #menu-content .active {
+    border-left: solid 3px #0a1681;
 }
-.patlog-sidemenu #menu-content .active a{
-	color: #0a1681;
+.patlog-sidemenu #menu-content .active a {
+    color: #0a1681;
 }
 .patlog-sidemenu {
     display: flex;
@@ -75,87 +67,106 @@
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-.patlog-sidemenu .patlog-prof, 
-.patlog-sidemenu .menu-list, 
-.patlog-sidemenu .patlog-chat{
-	height: 350px;
+.patlog-sidemenu .patlog-prof,
+.patlog-sidemenu .menu-list,
+.patlog-sidemenu .patlog-chat {
+    height: 350px;
     max-height: 100%;
 }
-.patlog-prof{
-	display: flex;
+.patlog-prof {
+    display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
 }
-.patlog-profpic{
-	width:50px;
-	height: 50px;
-	border-radius: 50px;
+.patlog-profpic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
 }
-.patlog-proftxt{
-	width: 100%;
+.patlog-profpic .img-fluid {
+    width: 100%;
+    display: flex;
+    height: 100%;
+}
+.patlog-profpic .img-fluid img {
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+}
+.patlog-proftxt {
+    width: 100%;
     text-align: center;
 }
-.patlog-profpic1{
-	width:100%;
-	display: flex;
+.patlog-profpic1 {
+    width: 100%;
+    display: flex;
     justify-content: center;
 }
-.patlog-proftxt p{
-	color:#0a1681;
-	font-size: 14px;
+.patlog-proftxt p {
+    color: #0a1681;
+    font-size: 14px;
     font-weight: 500;
 }
-.patlog-proftxt h6{
-	color:#a4a4a4;
+.patlog-proftxt h6 {
+    color: #a4a4a4;
     font-weight: 300;
     font-size: 16px;
-    margin-top:10px;
+    margin-top: 10px;
 }
-.patlog-sidemenu .patlog-chat{
-	display: flex;
+.patlog-sidemenu .patlog-chat {
+    display: flex;
     flex-direction: column;
     justify-content: end;
 }
-.patlog-sidemenu .patlog-chat p{
-	margin-bottom: 5px;
+.patlog-sidemenu .patlog-chat p {
+    margin-bottom: 5px;
 }
 .patlog-sidemenu .patlog-chat .nav-pills {
     margin: 0px;
 }
-
 .patlog-sidemenu .patlog-chat .iq-chat-ui li a {
     padding: 15px 10px;
     border-radius: 20px;
     width: 100%;
     margin-bottom: 0px;
 }
-.patlog-sidemenu .patlog-chat .chat-sidebar-name{
-	width: 60%;
+.patlog-sidemenu .patlog-chat .chat-sidebar-name {
+    width: 60%;
     overflow: hidden;
 }
 .patlog-sidemenu .patlog-chat .chat-sidebar-name h6 {
     font-size: 12px;
 }
 .patlog-sidemenu .patlog-chat .chat-sidebar-name span {
-	font-size: 10px;
+    font-size: 10px;
 }
-.patlog-sidemenu .patlog-chat .chat-msg-counter{
-	background: #0a1681;
-	font-size: 8px;
+.patlog-sidemenu .patlog-chat .chat-msg-counter {
+    background: #0a1681;
+    font-size: 8px;
 }
-.patlog-metrics-bd{
+.patlog-metrics-bd {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .metrics-add-btn {
-    background: #0a1681;
-    padding: 5px 10px;
-    color: #fff;
-    width: 35px;
-    height: 35px;
+    border: solid 1px #0a1681;
+    color: #0a1681;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    width: auto;
     border-radius: 50px;
     cursor: pointer;
+}
+.metrics-add-btn:hover{
+    color: #ffffff !important;
+    background: #0a1681;
+}
+.metrics-addedit-bd{
+    display: flex;
+    gap: 10px;
 }
 .patlog-metrics {
     width: 65%;
@@ -164,20 +175,21 @@
     background: #f4f2f7;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    overflow-y: auto;
 }
-.metrics-heading{
-	color:#0a1681;
-	font-weight: 600;
-	font-size: 2em;
+.metrics-heading {
+    color: #0a1681;
+    font-weight: 600;
+    font-size: 2em;
 }
-.patlog-clinicalinfo{
-	background: #fff;
+.patlog-clinicalinfo {
+    background: #fff;
     border-radius: 20px;
     padding: 20px 20px;
     -webkit-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
     -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
     box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
-    margin-top:10px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,18 +201,23 @@
     text-align: center;
     color: #0a1681;
 }
-.patlogbg h4, .patlogbg h6{
-	color:#0a1681;
+.patlogbg h4,
+.patlogbg h6 {
+    color: #0a1681;
 }
-.patlogbg h4{
-	font-weight: 500;
-	font-size: 1.600em;
-	line-height: 1;
+
+.patlogbg h4 {
+    font-weight: 500;
+    font-size: 1.600em;
+    line-height: 1;
 }
-.patlog-height, .patlog-weight,{
-	text-align: center;
+.patlog-height,
+.patlog-weight, {
+    text-align: center;
 }
-.patlog-height, .patlog-weight, .patlog-bmi {
+.patlog-height,
+.patlog-weight,
+.patlog-bmi {
     width: 30%;
     display: flex;
     justify-content: center;
@@ -209,23 +226,24 @@
 .patlog-bmi {
     width: 40%;
 }
-.patlog-cli_label, .patlog-cli_label {
-	text-align: center;
-	width: 100%;
-	margin-top: 10px;
+.patlog-cli_label,
+.patlog-cli_label {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
     margin-bottom: 0px;
 }
-.patlog-cli_icon{
-	height:25px;
-	padding-top: 8px;
+.patlog-cli_icon {
+    height: 25px;
+    padding-top: 8px;
 }
-.patlog-cli_icon img{
-	height:100%;
-	width:100%;
+.patlog-cli_icon img {
+    height: 100%;
+    width: 100%;
 }
-.patlog-analytics{
-	height: calc(100% - 290px);
-	padding:20px 0px;
+.patlog-analytics {
+    height: calc(100vh - 26.6rem);
+    padding: 20px 0px;
 }
 .patlog-analytics .nav-pills .nav-link.active {
     color: #ffffff !important;
@@ -234,131 +252,144 @@
 .patlog-analytics .nav-pills .nav-link {
     color: #0a1681 !important;
 }
-.patlog-hrbp{
-	display: flex;
-	justify-content: space-evenly; 
+.patlog-hrbp {
+    display: flex;
+    justify-content: space-evenly;
+    height: auto;
+    margin-top: 10%;
 }
 .patlog-hr {
     background: #435585d6;
-    border-radius: 50px;
-    padding: 30px 60px;
-    width: auto;
+    border-radius: 40px;
+    padding: 30px;
+    width: 40%;
     -webkit-box-shadow: 0px 0px 3px 0px rgb(85 102 145);
     box-shadow: 0px 0px 3px 0px rgb(85 102 145);
 }
 .patlog-hricon {
     width: 60px;
     height: 60px;
-    position: absolute;
+    position: relative;
     border: solid 2px #fff;
-    top: 25px;
+    margin-top: -70px;
     border-radius: 50px;
-    background:#435585;
+    background: #435585;
 }
-.patlog-hricon img{
-	width: 100%;
+.patlog-hricon img {
+    width: 100%;
     height: 100%;
     padding: 15px;
 }
-.patlog-hrbd{
-	display: flex;
-	justify-content: center;
+.patlog-hrbd {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-.patlog-hrvalue{
-	text-align: center;
+.patlog-hrvalue {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.patlog-hrvalue h3, 
-.patlog-hrvalue h4{
-	color:#fff;
+.patlog-hrvalue h3,
+.patlog-hrvalue h4 {
+    color: #fff;
 }
-.patlog-hrvalue h3{
-	font-size: 1.5em;
+.patlog-hrvalue h3 {
+    font-size: 1.5em;
 }
-.patlog-hrvalue h4{
-	font-size: 1em;
+.patlog-hrvalue h4 {
+    font-size: 1em;
 }
-.patlog-hrstatus{
-	background: #fff;
+.patlog-hrstatus {
+    background: #fff;
     color: #0a1681;
     border-radius: 15px;
     margin-top: 10px;
     padding: 5px
 }
-
 .patlog-bp {
     background: #363062d6;
-    border-radius: 50px;
-    padding: 30px 40px;
-    width: auto;
+    border-radius: 40px;
+    padding: 30px;
+    width: 40%;
     -webkit-box-shadow: 0px 0px 3px 0px rgb(86 81 123);
     box-shadow: 0px 0px 3px 0px rgb(86 81 123);
 }
 .patlog-bpicon {
     width: 60px;
     height: 60px;
-    position: absolute;
+    position: relative;
     border: solid 2px #fff;
-    top: 25px;
+    margin-top: -70px;
     border-radius: 50px;
-    background:#363062;
+    background: #363062;
 }
-.patlog-bpicon img{
-	width: 100%;
+.patlog-bpicon img {
+    width: 100%;
     height: 100%;
     padding: 15px;
 }
-.patlog-bpbd{
-	display: flex;
-	justify-content: center;
+.patlog-bpbd {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
-.patlog-bpvalue{
-	text-align: center;
+.patlog-bpvalue {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.patlog-bpvalue h3, 
-.patlog-bpvalue h4{
-	color:#fff;
+.patlog-bpvalue h3,
+.patlog-bpvalue h4 {
+    color: #fff;
 }
-.patlog-bpvalue h3{
-	font-size: 1.5em;
+.patlog-bpvalue h3 {
+    font-size: 1.5em;
 }
-.patlog-bpvalue h4{
-	font-size: 1em;
+.patlog-bpvalue h4 {
+    font-size: 1em;
 }
-.patlog-bpstatus{
-	background: #fff;
+.patlog-bpstatus {
+    background: #fff;
     color: #0a1681;
     border-radius: 15px;
     margin-top: 10px;
     padding: 5px;
 }
-.minval{
-	font-size: 12px;
+.minval {
+    font-size: 12px;
 }
-.patlog-notes{
-	padding: 50px 30px;
+.patlog-notes {
+    padding: 30px 30px;
 }
-.patlog-reviewnotes h4{
-	color:#a09e9e;
-	font-size:14px;
+.patlog-reviewnotes h4 {
+    color: #a09e9e;
+    font-size: 14px;
 }
-.patlog-messages h4{
-	color:#a09e9e;
-	font-size:14px;
+.patlog-messages h4 {
+    color: #a09e9e;
+    font-size: 14px;
 }
-.patlog-reviewnotes{
-	padding:15px 0px;
+.patlog-reviewnotes {
+    padding: 15px 0px;
 }
-.msg-bg{
-	background:#d0d4e0
+.msg-bg {
+    background: #d0d4e0
 }
-.rvn-bg{
-	background: #e4e5f9;
+.rvn-bg {
+    background: #e4e5f9;
 }
-.patlog-reviewnotesbd{
-	display: flex;
-	padding:15px;
-	border-radius: 5px;
-	margin-top: 10px;
+.patlog-reviewnotesbd {
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
     margin-bottom: 20px;
     -webkit-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
     -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
@@ -383,18 +414,219 @@
     left: 100%;
     top: 0;
     border-top: 20px solid transparent;
-    border-bottom: 25px solid transparent;
+    border-bottom: 23px solid transparent;
     border-left: 20px solid #ffffff;
 }
-.patlog-reviewnotestxt{
-	padding-left: 35px;
-	color: #000000c2;
+.patlog-reviewnotestxt {
+    padding-left: 35px;
+    color: #000000c2;
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.patlog-reviewnotesbadge h4{
-	line-height: 1;
+.patlog-reviewnotesbadge h4 {
+    line-height: 1;
 }
-.patlog-reviewnotesbadge h5{
-	font-size: 1em;
+.patlog-reviewnotesbadge h5 {
+    font-size: 1em;
     color: #8f8d8d;
     line-height: 2;
+}
+#patient-login .iq-navbar-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 25px;
+}
+#patient-login .iq-sidebar-logo {
+    padding: 0px;
+    width: auto;
+}
+.patlog-navlist {
+    display: flex;
+    align-items: center;
+}
+.patlog-navlist li {
+    padding: 0px 5px;
+}
+.patlog-logout {
+    border: solid 1px #eb5c59;
+    padding: 3px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.patlog-logout:hover {
+    background: #eb5c59;
+}
+.patlog-logout:hover i,
+.patlog-logout:hover span {
+    color: #fff;
+}
+.patlog-logout i {
+    color: #eb5c59;
+}
+.patlog-logout span {
+    color: #eb5c59;
+    font-size: 14px;
+}
+.patlog-wrapper-menu{
+    display: none;
+    margin-left: 0px;
+}
+.patlog-wrapper-menu i{
+    font-size: 18px;
+    color: #0a1681;
+}
+.patlog-navlist li a {
+    color: #0a1681;
+}
+.patlog-username{
+    display: none;
+}
+.patlog-hide-sidemenu{
+        display: none;
+    }
+@media (max-width: 1299px) {
+    .patlog-wrapper-menu{
+        display: block;
+    }
+    .patlog-hide-sidemenu{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #patient-login .iq-sidebar-logo{
+        display: none;
+    }
+    .patlog-content{
+        width: calc(100% - 0px);
+    }
+    .patlog-sidemenu {
+        position: fixed;
+        left:-270px;
+        top: 0;
+        height: calc(100vh - 0px);
+        z-index: 100;
+        -webkit-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
+        -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
+        box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .show-patlog-sidemenu{
+        left:0px;
+    }
+    .patlog-metrics{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .patlog-hrbp{
+        margin-top: 12%;
+    }
+    .patlog-hrvalue h3, .patlog-bpvalue h3 {
+        font-size: 1.3em;
+    }
+    .patlog-hrvalue h4, .patlog-bpvalue h4 {
+        font-size: 0.8em;
+    }
+    .patlog-username{
+        display: block;
+    }
+    .metrics-heading {
+        font-size: 1.3em;
+        font-weight: 400;
+    }
+}
+@media (max-width: 768px) {
+    .patlog-content{
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .patlog-metrics, .patlog-right{
+        width:100%;
+        height: auto;
+    }
+    .patlog-right {
+        height: auto;
+    }
+    .patlog-hr, .patlog-bp{
+        padding: 60px 30px;
+    }
+    .patlog-hricon, .patlog-bpicon{
+        margin-top: -100px;
+    }
+    .patlog-hrvalue h3, .patlog-bpvalue h3 {
+        font-size: 1.5em;
+    }
+    .patlog-hrvalue h4, .patlog-bpvalue h4 {
+        font-size: 1em;
+    }
+}
+@media (max-width: 426px) {
+    .patlog-hr, .patlog-bp{
+        padding: 30px 30px;
+    }
+    .patlog-hricon, .patlog-bpicon {
+        margin-top: -70px;
+    }
+    .patlog-hrbp {
+        margin-top: 20%;
+    }
+    .patlog-bp, .patlog-hr{
+        width: 51%;
+    }
+    .patlog-hrbp{
+        flex-wrap: wrap; 
+    }
+    .patlog-bp {
+        margin-top: 20%;
+    }
+    #patient-login {
+        padding: 100px 15px 15px 15px;
+        height: 100%;
+    }
+    .metrics-heading {
+        font-size: 1.3em;
+        font-weight: 400;
+    }
+    .patlog-clinicalinfo{
+        flex-wrap: wrap;
+    }
+    .patlog-bmi {
+        width: 100%;
+    }
+    .patlog-height, .patlog-weight {
+        width: 50%;
+    }
+    .patlog-analytics-body .nav{
+        overflow: auto;
+        width: 100%;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+    .patlog-analytics-body .nav li a{
+        text-wrap: nowrap;
+    }
+    .patlog-analytics-body .nav li .nav-link {
+        padding: .5rem 1rem;
+    }
+    .metrics-add-btn{
+        padding: 5px 20px;
+    }
+    .patlog-metrics{
+        padding: 20px 15px 20px 15px;
+    }
+    .patient_login_main .iq-card-body {
+        padding: 0px;
+    }
+    .patlog-username {
+        margin-bottom: 10px;
+    }
+    .metrics-heading{
+        display: none;
+    }
+    .patlog-metrics-bd {
+        justify-content: flex-end;
+    }
 }
