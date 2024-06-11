@@ -45,6 +45,7 @@
 }
 .patlog-sidemenu #menu-content li a {
     color: #c2c2c2;
+    cursor: pointer;
 }
 .patlog-sidemenu #menu-content li span {
     padding-left: 10px;
@@ -130,6 +131,7 @@
     border-radius: 20px;
     width: 100%;
     margin-bottom: 0px;
+    cursor: pointer;
 }
 .patlog-sidemenu .patlog-chat .chat-sidebar-name {
     width: 60%;
@@ -185,7 +187,7 @@
 .patlog-clinicalinfo {
     background: #fff;
     border-radius: 20px;
-    padding: 20px 20px;
+    padding: 0px 20px;
     -webkit-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
     -moz-box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
     box-shadow: 0px 0px 25px 0px rgba(45, 69, 95, 0.1);
@@ -218,13 +220,15 @@
 .patlog-height,
 .patlog-weight,
 .patlog-bmi {
-    width: 30%;
+    width: 25%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 .patlog-bmi {
-    width: 40%;
+    width: 50%;
+    height:200px;
+    position: relative;
 }
 .patlog-cli_label,
 .patlog-cli_label {
@@ -242,8 +246,8 @@
     width: 100%;
 }
 .patlog-analytics {
-    height: calc(100vh - 26.6rem);
-    padding: 20px 0px;
+    height: calc(100% - 260px);
+    padding: 20px 0px 0px 0px;
 }
 .patlog-analytics .nav-pills .nav-link.active {
     color: #ffffff !important;
@@ -424,6 +428,14 @@
     height: 3em;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 90%;
+}
+.patlog-reviewnote-viewmore{
+    width: 10%;
+    text-align: center;
+}
+.patlog-reviewnote-viewmore i{
+    font-size: 30px;
 }
 .patlog-reviewnotesbadge h4 {
     line-height: 1;
@@ -486,11 +498,115 @@
     display: none;
 }
 .patlog-hide-sidemenu{
-        display: none;
-    }
+    display: none;
+}
+.patlog-chat .avatar img{
+    width:100%;
+    height:100%;
+    border-radius:50px;
+}
+.patlog-chat .avatar{
+    height:35px;
+    width:35px;
+}
+.patlog-analytics .highcharts-background {
+    fill: none !important;
+}
+.patlog-analytics-body{
+    height: 100%;
+    width:100%;
+}
+.patlog-analytics-body .tab-content{
+    height: calc(100% - 50px);
+}
+.bmi-count{
+    position: absolute;
+    height: 100%;
+    color: #000;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.bmiColor {
+    fill: #0a1681 !important;
+    fill-opacity: 1 !important;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#bmiContainer{
+    height: 100% !important;
+    width: 100% !important;
+}
+#bmiContainer .highcharts-root{
+    height: 100% !important;
+    width: 100% !important;
+}
+
+#bmiContainer .highcharts-title{
+    display: none !important;
+}
+
+#bmiContainer div{
+    height: 100% !important;
+    width:100% !important;
+}
+.patlog-content-analytics {
+    width: calc(100% - 260px);
+    height: calc(100vh - 160px);
+    display: flex;
+}
+.patlog-content-analytics .patlog-analytics {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+.patlog-content-analytics .patlog-analytics-body .tab-content {
+    height: calc(100% - 35px);
+}
+.patlog-analytics-body .graph-holder-test {
+    height: calc(100% - 0px);
+    width: 100%;
+}
+.patlog-content-chat {
+    width: calc(100% - 260px);
+    height: calc(100vh - 160px);
+    display: flex;
+}
+.patlog-content-chat .patlog-chat-body {
+    padding: 10px 0px !important;
+    background: #f4f2f7 !important;
+    width: 100%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.patlog-content-chat .chat-full-screen {
+    height: calc(100vh - 180px);
+}
+.patlog-content-chat .chat-block {
+    position: relative;
+    height: calc(100vh - 300px - 60px);
+}
+.patlog-content-chat .chat-sidebar-right{
+    padding-right: 0px;
+}
+
 @media (max-width: 1299px) {
     .patlog-wrapper-menu{
         display: block;
+    }
+    .patlog-chat div{
+        display: none;
+    }
+    .patlog-content-chat .patlog-chat-body {
+        border-bottom-left-radius: 20px;
+        border-top-left-radius: 20px;
     }
     .patlog-hide-sidemenu{
         display: flex;
@@ -500,6 +616,9 @@
         display: none;
     }
     .patlog-content{
+        width: calc(100% - 0px);
+    }
+    .patlog-content-chat{
         width: calc(100% - 0px);
     }
     .patlog-sidemenu {
@@ -537,9 +656,16 @@
         font-size: 1.3em;
         font-weight: 400;
     }
+    #patient-login .add_edit_clinical_info-popup {
+        margin: 0 auto;
+    }
 }
 @media (max-width: 768px) {
     .patlog-content{
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .patlog-content-chat{
         flex-wrap: wrap;
         height: 100%;
     }
@@ -562,9 +688,33 @@
     .patlog-hrvalue h4, .patlog-bpvalue h4 {
         font-size: 1em;
     }
+    #patient-login .add_edit_clinical_info-popup {
+        margin: 0 auto;
+    }
+    .patlog-content-chat .patlog-chat-body {
+        padding: 0px 0px !important;
+    }
+    .patlog-content-chat .container-fluid{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .patlog-content-chat .chat-full-screen {
+        height: calc(100vh - 150px);
+    }
+    .patlog-content-chat .chat-data-conversation, 
+    .patlog-content-chat .chat-data-left, 
+    .patlog-content-chat .chat-sidebar-right, 
+    .patlog-content-chat .create-new-conversation {
+        width: calc(100% - 70px);
+        height: calc(100% - 40px);
+        padding: 0px;
+    }
 }
 @media (max-width: 426px) {
-    .patlog-hr, .patlog-bp{
+    #patient-login .add_edit_clinical_info-popup {
+        margin: 0 auto;
+    }
+    .patlog-hr, .patlog-bp {
         padding: 30px 30px;
     }
     .patlog-hricon, .patlog-bpicon {
@@ -592,18 +742,24 @@
     }
     .patlog-clinicalinfo{
         flex-wrap: wrap;
+        padding-top: 25px;
     }
     .patlog-bmi {
         width: 100%;
+        height: 200px;
     }
     .patlog-height, .patlog-weight {
         width: 50%;
+    }
+    .patlog-analytics{
+        height:350px;
+        padding: 35px 0px 0px 0px;
     }
     .patlog-analytics-body .nav{
         overflow: auto;
         width: 100%;
         flex-wrap: nowrap;
-        padding-bottom: 5px;
+        padding-bottom: 10px;
     }
     .patlog-analytics-body .nav li a{
         text-wrap: nowrap;
@@ -616,6 +772,8 @@
     }
     .patlog-metrics{
         padding: 20px 15px 20px 15px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
     }
     .patient_login_main .iq-card-body {
         padding: 0px;
