@@ -23,6 +23,60 @@
     height: calc(100vh - 160px);
     display: flex;
 }
+.patlog-content-reviewnotes {
+    width: calc(100% - 260px);
+    height: calc(100vh - 160px);
+    display: flex;
+    padding: 15px;
+    background: #f4f2f7;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.patlog-reviewnotes-border{
+    width:100%;
+    height:100%;
+}
+.patlog-reviewnotes-border .col-sm-12{
+    padding:0px;
+}
+.patlog-content-reviewnotes .patient-plan-c-table {
+    height: calc(100vh - 375px);
+    max-height: calc(100vh - 375px);
+}
+.patlog-reviewnote-component .iq-card-body{
+    padding: 0px;
+}
+.patlog-content-reviewnotes .patient-review-note td:nth-child(1){
+    width: 10%;
+}
+.patlog-content-reviewnotes .patient-review-note td:nth-child(2),
+.patlog-content-reviewnotes .patient-review-note td:nth-child(3) {
+    width: 45%;
+}
+.tab-pane{
+    background: #fff;
+    border-radius: 20px;
+    height: calc(100vh - 260px);
+    padding: 20px;
+    overflow-y: auto;
+}
+.patlog-content-reviewnotes .iq-card-block{
+    margin-bottom: 0px;
+}
+.patlog-content-reviewnotes .nav-pills .active {
+    color: #fff;
+    background-color: #0a1681;
+}
+.patlog-content-reviewnotes .nav-pills .active:hover {
+    color: #fff;
+    background-color: #0a1681;
+}
+.patlog-content-reviewnotes .nav-pills a {
+    color: #0a1681;
+}
+.patlog-content-reviewnotes .nav-pills a:hover{
+    color: #0a1681;
+}
 .patlog-right {
     width: 40%;
     height: calc(100vh - 160px);
@@ -41,10 +95,11 @@
 .patlog-sidemenu #menu-content li {
     padding-left: 20px;
     margin-top: 10px;
-    color: #c2c2c2;
+    color: #959595;
+    border-left: solid 3px #ffffff;
 }
 .patlog-sidemenu #menu-content li a {
-    color: #c2c2c2;
+    color: #959595;
     cursor: pointer;
 }
 .patlog-sidemenu #menu-content li span {
@@ -500,6 +555,9 @@
 .patlog-hide-sidemenu{
     display: none;
 }
+.patlog-hide-sidemenu i{
+    font-size: 16px;
+}
 .patlog-chat .avatar img{
     width:100%;
     height:100%;
@@ -518,16 +576,17 @@
 }
 .patlog-analytics-body .tab-content{
     height: calc(100% - 50px);
+    position: relative;
 }
-.bmi-count{
+.bmi-count {
     position: absolute;
     height: 100%;
     color: #000;
-    bottom: 0;
+    bottom: 20px;
     z-index: 1;
     width: 100%;
     text-align: center;
-    justify-content: center;
+    justify-content: flex-end;
     display: flex;
     flex-direction: column;
 }
@@ -557,10 +616,18 @@
     height: 100% !important;
     width:100% !important;
 }
+.patient-analytics-component{
+    width:100%;
+    height:100%;
+}
 .patlog-content-analytics {
     width: calc(100% - 260px);
     height: calc(100vh - 160px);
     display: flex;
+    background: #f4f2f7;
+    padding: 15px 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .patlog-content-analytics .patlog-analytics {
     width: 100%;
@@ -596,6 +663,40 @@
 .patlog-content-chat .chat-sidebar-right{
     padding-right: 0px;
 }
+.patlog-content-chat .new-conversation {
+    position: relative;
+    height: calc(100vh - 13rem);
+}
+.patlog-no_msg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.patlog-nomsgicon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+.patlog-nomsgicon img{
+    width:100%;
+    height:100%;
+}
+.patlog-no_msg p{
+    width: 100%;
+    text-align: center;
+}
+.palog-normallegend{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    bottom: -10px;
+    color: green;
+    font-size: 10px;
+}
 
 @media (max-width: 1299px) {
     .patlog-wrapper-menu{
@@ -620,6 +721,16 @@
     }
     .patlog-content-chat{
         width: calc(100% - 0px);
+    }
+    .patlog-content-analytics {
+        width: calc(100% - 0px) !important;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .patlog-content-reviewnotes{
+        width: calc(100% - 0px);
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
     }
     .patlog-sidemenu {
         position: fixed;
@@ -660,12 +771,48 @@
         margin: 0 auto;
     }
 }
+@media (max-width: 1024px) {
+    .patlog-content {
+        flex-wrap: wrap;
+        height: 100% !important;
+    }
+    .patlog-metrics, .patlog-right {
+        width: 100%;
+        height: auto !important;
+    }
+    .patlog-analytics {
+        height: 350px;
+    }
+    .patlog-bp, .patlog-hr {
+        width: 20%;
+    }
+    .patlog-content-analytics{
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media (max-width: 990px) {
+    .patlog-content-chat .chat-data-conversation, 
+    .patlog-content-chat .chat-data-left, 
+    .patlog-content-chat .chat-sidebar-right, 
+    .patlog-content-chat .create-new-conversation {
+        width: calc(100% - 100px);
+        height: calc(100% - 65px);
+        padding: 0px;
+    }
+}
+
 @media (max-width: 768px) {
     .patlog-content{
         flex-wrap: wrap;
         height: 100%;
     }
     .patlog-content-chat{
+        flex-wrap: wrap;
+        height: 100%;
+    }
+    .patlog-content-reviewnotes{
         flex-wrap: wrap;
         height: 100%;
     }
@@ -678,6 +825,7 @@
     }
     .patlog-hr, .patlog-bp{
         padding: 60px 30px;
+        width:30%;
     }
     .patlog-hricon, .patlog-bpicon{
         margin-top: -100px;
@@ -710,7 +858,40 @@
         padding: 0px;
     }
 }
-@media (max-width: 426px) {
+@media (max-width: 576px) {
+    .patlog-content-chat .chat-data-conversation, 
+    .patlog-content-chat .chat-data-left, 
+    .patlog-content-chat .chat-sidebar-right, 
+    .patlog-content-chat .create-new-conversation {
+        width: calc(100% - 30px);
+        height: calc(100% - 0px);
+        padding: 15px;
+    }
+    .patlog-reviewnote-component .patient-review-note tr{
+        display: flex;
+        width: 100% !important;
+        flex-wrap: wrap;
+        border: solid 1px #eee;
+        border-radius: 2px;
+    }
+    .patlog-content-reviewnotes .patient-review-note td{
+        width: 100% !important;
+        padding: 0.2rem .8rem !important;
+    }
+    .patlog-content-reviewnotes .patient-plan-c-table thead{
+        display: none;
+    }
+    .patlog-reviewnote-component .review-note-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+    .patlog-content-analytics {
+        width: 100% !important;
+        height: 350px !important;
+    }
+    .patlog-content-chat .chat-full-screen {
+        height: calc(100vh - 120px);
+    }
     #patient-login .add_edit_clinical_info-popup {
         margin: 0 auto;
     }
@@ -734,6 +915,7 @@
     }
     #patient-login {
         padding: 100px 15px 15px 15px;
+        min-height: 100vh;
         height: 100%;
     }
     .metrics-heading {
@@ -742,14 +924,14 @@
     }
     .patlog-clinicalinfo{
         flex-wrap: wrap;
-        padding-top: 25px;
+        padding-top: 25px !important;
     }
     .patlog-bmi {
-        width: 100%;
-        height: 200px;
+        width: 100% !important;
+        height: 200px !important;
     }
     .patlog-height, .patlog-weight {
-        width: 50%;
+        width: 50% !important;
     }
     .patlog-analytics{
         height:350px;
@@ -762,7 +944,7 @@
         padding-bottom: 10px;
     }
     .patlog-analytics-body .nav li a{
-        text-wrap: nowrap;
+        white-space: nowrap;
     }
     .patlog-analytics-body .nav li .nav-link {
         padding: .5rem 1rem;
@@ -785,9 +967,14 @@
         display: none;
     }
     .patlog-metrics-bd {
-        justify-content: flex-end;
+        justify-content: flex-end !important;
     }
     .patlog-bmi img{
         max-width: 70%;
+    }
+}
+@media (max-width: 375px) {
+    .patlog-bmi .highcharts-plot-band-label {
+        font-size: 10px !important;
     }
 }
