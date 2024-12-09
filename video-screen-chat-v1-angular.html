@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" ng-app="videoCallApp">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title></title>
+
+      <link rel="icon" type="image/svg+xml" href="favicon_io/favicon.svg">
+      <link rel="icon" type="image/png" href="favicon_io/favicon.png">
+
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Typography CSS -->
+      <link rel="stylesheet" href="css/typography.css">
+      <!-- Style CSS -->
+      <link rel="stylesheet" href="css/style.css"> 
+      <link rel="stylesheet" href="css/custom.css"> 
+
+      <!-- Responsive CSS -->
+      <link rel="stylesheet" href="css/responsive.css">
+
+      <link rel="stylesheet" href="css/screening.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+      <style>
+        .video_call_main {
+            transition: all 0.3s ease;
+        }
+        .video_call_header {
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        #video_call_main.minimized {
+         cursor: move;
+         }
+        .video_call_body {
+            background-color: #fff;
+        }
+        
+        .modal-title {
+            display: inline-block;
+        }
+        .video_call_main {
+          position: absolute;
+          z-index: 2000;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+          background-color: #fff;
+          border-radius: 5px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width:98%;
+          height:98%;
+      }
+
+.video_call_header {
+    padding: .5rem 1rem;
+    align-items: center;
+    line-height: 1.2;
+    justify-content: space-between;
+    display: flex;
+    border-bottom: 1px solid #dee2e6;
+}
+.video_iframe {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+.video_call_body {
+    padding: 0;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    height: calc(100% - 45px);
+}
+#video_minbtn svg {
+    width: 20px;
+    height: 20px;
+}
+#video_maxbtn svg {
+    width: 15px;
+    height: 15px;
+}
+    </style>
+   </head>
+   <body class="sidebar-main-menu" ng-controller="VideoCallController">
+      
+      <!-- Wrapper Start -->
+      <div class="wrapper">
+
+         <!-- Sidebar  -->
+         <div class="iq-sidebar">
+            <div class="iq-sidebar-logo d-flex justify-content-between">
+               <a href="dashboard.html">
+               <img src="images/logo.png" class="img-fluid" alt="">
+               <span></span>
+               </a>
+               <div class="iq-menu-bt-sidebar">
+                  <div class="iq-menu-bt align-self-center">
+                     <div class="wrapper-menu">
+                        <div class="main-circle"><i class="fa fa-ellipsis-h ft-12"></i></div>
+                        <div class="hover-circle"><i class="fa fa-ellipsis-v ft-12"></i></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="sidebar-scrollbar">
+               <nav class="iq-sidebar-menu">
+                  <ul id="iq-sidebar-toggle" class="iq-menu">
+                     <li class="iq-menu-title"><i class="fa fa-minus ft-12"></i><span>Menu</span></li>
+                     <li class="active">
+                        <a href="index.html" class="iq-waves-effect"><i class="ft-12 fa fa-tachometer"></i><span>Dashboard</span></a>
+                     </li>
+                     <li>
+                        <a href="patient.html" class="iq-waves-effect"><i class="ft-12 fa fa-user"></i><span>Patient</span></a>
+                     </li>
+                  </ul>
+               </nav>
+               <div class="p-3"></div>
+            </div>
+         </div>
+         <!-- Page Content  -->
+         <div id="content-page" class="content-page">
+            <!-- TOP Nav Bar -->
+            <div class="iq-top-navbar header-top-sticky">
+               <div class="iq-navbar-custom">
+                  <div class="iq-sidebar-logo">
+                     <div class="top-logo">
+                        <a href="index.html" class="logo">
+                        <img src="images/logo.png" class="img-fluid" alt="">
+                        <span></span>
+                        </a>
+                     </div>
+                  </div>
+                  <nav class="navbar navbar-expand-lg navbar-light p-0">
+                     <!-- <div class="logo-text-top">
+                        <span class="logo-text">RH<span class="logo-text-l">e</span>IMS</span>
+                        <span class="logo-text-sub-topbar">Remote Health Evaluation & Information Management System</span>
+                     </div> -->
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <i class="ri-menu-3-line"></i>
+                     </button>
+                     <div class="iq-menu-bt align-self-center">
+                        <div class="wrapper-menu">
+                           <div class="main-circle"><i class="ri-more-fill"></i></div>
+                           <div class="hover-circle"><i class="ri-more-2-fill"></i></div>
+                        </div>
+                     </div>
+                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto navbar-list">
+                           <!-- <li class="nav-item">
+                              <a class="search-toggle iq-waves-effect language-title" href="#"><i style="font-size:20px;margin-right: 5px;" class="fa fa-map-marker" aria-hidden="true"></i> Tokoroa <i class="ft-12 fa fa-chevron-down"></i></a>
+                              <div class="iq-sub-dropdown">
+                                 <a class="iq-sub-card" href="#"><img src="images/small/flag-02.png" alt="img-flaf" class="img-fluid mr-2">French</a>
+                                 <a class="iq-sub-card" href="#"><img src="images/small/flag-03.png" alt="img-flaf" class="img-fluid mr-2">Spanish</a>
+                              </div>
+                           </li> -->
+                           <!-- <li class="nav-item iq-full-screen">
+                              <a href="#" class="iq-waves-effect" id="btnFullscreen"><i class="ri-fullscreen-line"></i></a>
+                              </li> -->
+                           <li class="nav-item">
+                              <a href="#" class="search-toggle iq-waves-effect">
+                              <i class="fa fa-bell"></i>
+                              <span class="bg-danger dots"></span>
+                              </a>
+                              <div class="iq-sub-dropdown">
+                                 <div class="iq-card shadow-none m-0">
+                                    <div class="iq-card-body p-0 ">
+                                       <div class="bg-primary p-3">
+                                          <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
+                                       </div>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/m.png" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">New Patient added</h6>
+                                                <small class="float-right font-size-12">1 min ago</small>
+                                                <p class="mb-0">Petey Cruiser</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/m.png" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Patient data updated</h6>
+                                                <small class="float-right font-size-12">5 min ago</small>
+                                                <p class="mb-0">Jond Bini</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/f.png" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Xray Report</h6>
+                                                <small class="float-right font-size-12">20 min ago</small>
+                                                <p class="mb-0">Anna Sthesia</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/f.png" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">New Patient added</h6>
+                                                <small class="float-right font-size-12">1 hour ago</small>
+                                                <p class="mb-0">Fenny</p>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="nav-item dropdown">
+                              <a href="#" class="search-toggle iq-waves-effect">
+                              <i class="fa fa-video-camera"></i>
+                              <span class="bg-primary count-mail"></span>
+                              </a>
+                              <div class="iq-sub-dropdown">
+                                 <div class="iq-card shadow-none m-0">
+                                    <div class="iq-card-body p-0 ">
+                                       <div class="bg-primary p-3">
+                                          <h5 class="mb-0 text-white">Make a Call<small class="badge  badge-light float-right pt-1"></small></h5>
+                                       </div>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Dr. Barb Dwyer</h6>
+                                                <small class="float-left font-size-12">Online</small>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Dr. Terry Aki 
+                                                   <small class="float-right font-size-12">
+                                                   <i class="fa fa-phone text-primary" title="Phone call"></i>
+                                                   </small>
+                                                </h6>
+                                                <small class="float-left font-size-12">Offline (last seen 5 min ago)
+                                                </small>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Dr. Robin Banks
+                                                   <small class="float-right font-size-12">
+                                                   <i class="fa fa-phone text-primary" title="Phone call"></i>
+                                                   </small>
+                                                </h6>
+                                                <small class="float-left font-size-12">Offline (last seen 10 min ago)</small>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Dr. Barry Wine</h6>
+                                                <small class="float-left font-size-12">Online</small>
+                                             </div>
+                                          </div>
+                                       </a>
+                                       <a href="#" class="iq-sub-card" >
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/05.jpg" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Dr. Otto Matic</h6>
+                                                <small class="float-left font-size-12">Online</small>
+                                             </div>
+                                          </div>
+                                       </a>
+                                    </div>
+                                 </div>
+                              </div>
+
+
+                              <div class="iq-sub-dropdown" id="v-call-accept" style="display:none;">
+                                 <div class="iq-card shadow-none m-0">
+                                    <div class="iq-card-body p-0 ">
+                                       <div class="bg-primary p-3">
+                                          <h5 class="mb-0 text-white">Incoming Call<small class="badge  badge-light float-right pt-1"></small></h5>
+                                       </div>
+                                       <div class="iq-sub-card b-none">
+                                          <div class="media align-items-center">
+                                             <div class="">
+                                                <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             </div>
+                                             <div class="media-body ml-3">
+                                                <h6 class="mb-0 ">Dr. Barb Dwyer</h6>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="text-center mb-4">
+                                          
+                                          <button type="button" id="chat-start" class="btn bg-primary" onclick="pauseAudio()">
+                                             <a  data-toggle="pill" href="#video-call" style="color:#fff;">Accept</a>
+                                          </button>
+                                          <button id="cancel" onclick="pauseAudio()" type="button" class="btn btn-secondary">      Cancel
+                                          </button>
+                                          <audio id="audio" src="v-call.mp3" loop="loop"></audio>
+                                       </div>
+                                       
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </li>
+                        </ul>
+                     </div>
+                     <ul class="navbar-list">
+                        <li>
+                           <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
+                              <img src="images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
+                              <div class="caption">
+                                 <span class="font-size-12">Marilyn Rose</span>
+                                 <h6 class="mb-0 line-height">Maori Community Nurse</h6>
+                              </div>
+                           </a>
+                           <div class="iq-sub-dropdown iq-user-dropdown">
+                              <div class="iq-card shadow-none m-0">
+                                 <div class="iq-card-body p-0 ">
+                                    <div class="bg-primary p-3">
+                                       <h5 class="mb-0 text-white line-height"></h5>
+                                       <span class="text-white font-size-12">Available</span>
+                                    </div>
+                                    <a href="profile.html" class="iq-sub-card iq-bg-primary-hover">
+                                       <div class="media align-items-center">
+                                          <div class="rounded iq-card-icon iq-bg-primary">
+                                             <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                                          </div>
+                                          <div class="media-body ml-3">
+                                             <h6 class="mb-0 ">My Profile</h6>
+                                             <p class="mb-0 font-size-12">View personal profile details.</p>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="profile-edit.html" class="iq-sub-card iq-bg-primary-hover">
+                                       <div class="media align-items-center">
+                                          <div class="rounded iq-card-icon iq-bg-primary">
+                                             <i class="fa fa-address-card" aria-hidden="true"></i>
+                                          </div>
+                                          <div class="media-body ml-3">
+                                             <h6 class="mb-0 ">Edit Profile</h6>
+                                             <p class="mb-0 font-size-12">Modify your personal details.</p>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="account-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                       <div class="media align-items-center">
+                                          <div class="rounded iq-card-icon iq-bg-primary">
+                                             <i class="fa fa-cog" aria-hidden="true"></i>
+                                          </div>
+                                          <div class="media-body ml-3">
+                                             <h6 class="mb-0 ">Account settings</h6>
+                                             <p class="mb-0 font-size-12">Manage your account parameters.</p>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="privacy-setting.html" class="iq-sub-card iq-bg-primary-hover">
+                                       <div class="media align-items-center">
+                                          <div class="rounded iq-card-icon iq-bg-primary">
+                                             <i class="fa fa-lock" aria-hidden="true"></i>
+                                          </div>
+                                          <div class="media-body ml-3">
+                                             <h6 class="mb-0 ">Privacy Settings</h6>
+                                             <p class="mb-0 font-size-12">Control your privacy parameters.</p>
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <div class="d-inline-block w-100 text-center p-3">
+                                       <a class="bg-primary iq-sign-btn" href="sign-in-c.html" role="button">Sign out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+            <!-- TOP Nav Bar END -->
+
+        
+
+
+
+
+
+<div id="video_call_main" class="video_call_main" ng-class="{'minimized': isMinimized}" ng-style="videoStyle" drag-enabled="isMinimized">
+    <div  class="video_call_header" ng-mousedown="startDrag($event)">
+        <h5 class="modal-title">Video Call</h5>
+        <div class="video-header-btn">
+            <button id="video_minbtn" type="button" title="Minimize" ng-click="toggleState('minimized')" ng-show="!isMinimized">
+                <?xml version="1.0" encoding="utf-8"?>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M6 11H18V13H6V11Z" fill="#000000"/>
+                  </svg>
+            </button>
+            <button id="video_maxbtn" type="button" title="Maximize" ng-click="toggleState('maximized')" ng-show="isMinimized">
+                <?xml version="1.0" encoding="iso-8859-1"?>
+               <svg fill="#000000"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                   viewBox="0 0 473 473" xml:space="preserve">
+               <g>
+                  <g>
+                     <path d="M459.5,0H330.4c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5h96.5L218.8,235.1c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4
+                        s6.9-1.3,9.5-4L446,46.1v96.5c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5V13.5C473,6,467,0,459.5,0z"/>
+                     <path d="M459.5,231.2c-7.5,0-13.5,6-13.5,13.5v130.9c0,38.8-31.6,70.4-70.4,70.4H97.4C58.6,446,27,414.4,27,375.6V97.4
+                        C27,58.6,58.6,27,97.4,27h129.9c7.5,0,13.5-6,13.5-13.5S234.8,0,227.3,0H97.4C43.7,0,0,43.7,0,97.4v278.2
+                        C0,429.3,43.7,473,97.4,473h278.2c53.7,0,97.4-43.7,97.4-97.4V244.7C473,237.2,467,231.2,459.5,231.2z"/>
+                  </g>
+               </g>
+               </svg>
+            </button>
+            <button id="video_closebtn" type="button" title="Close" ng-click="closeVideoCall()">&times;</button>
+        </div>
+    </div>
+    <div class="video_call_body">
+        <iframe class="video_iframe" src="https://example.com" title="Full-Screen iFrame"></iframe>
+    </div>
+</div>
+
+
+
+
+            
+         </div>
+      </div>
+      <!-- Wrapper END -->
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+
+
+
+    
+   
+
+
+
+   <script>
+angular.module('videoCallApp', [])
+.controller('VideoCallController', ['$scope', function($scope) {
+    $scope.isMinimized = false;
+    $scope.position = { top: 0, left: 0 };
+    let isDragging = false;
+    let offset = { x: 0, y: 0 };
+
+    // Toggle video call state (minimized or expanded)
+    $scope.toggleState = function(state) {
+        $scope.isMinimized = (state === 'minimized');
+        const videoCallMain = document.getElementById('video_call_main');
+
+        if ($scope.isMinimized) {
+            videoCallMain.style.position = 'absolute';
+            videoCallMain.style.height = '200px';
+            videoCallMain.style.width = '350px';
+            videoCallMain.style.bottom = '10px';
+            videoCallMain.style.right = '10px';
+            videoCallMain.style.top = 'unset';
+            videoCallMain.style.left = 'unset';
+            videoCallMain.style.transform = 'unset';
+        } else {
+            videoCallMain.style.height = '98%';
+            videoCallMain.style.width = '98%';
+            videoCallMain.style.position = 'absolute';
+            videoCallMain.style.top = '50%';
+            videoCallMain.style.left = '50%';
+            videoCallMain.style.transform = 'translate(-50%, -50%)';
+        }
+    };
+
+    $scope.startDrag = function(event) {
+        if (!$scope.isMinimized) return; // Only allow dragging when minimized
+        event.preventDefault();
+        isDragging = true;
+
+        // Calculate initial offset based on the current position of the element
+        const videoCallMain = document.getElementById('video_call_main');
+        offset.x = event.clientX - videoCallMain.getBoundingClientRect().left;
+        offset.y = event.clientY - videoCallMain.getBoundingClientRect().top;
+
+        // Attach mousemove and mouseup listeners to the window
+        angular.element(window).on('mousemove', moveDrag);
+        angular.element(window).on('mouseup', stopDrag);
+    };
+
+    function moveDrag(event) {
+        if (isDragging) {
+            $scope.$apply(function() {
+                // Calculate new position
+                let newLeft = event.clientX - offset.x;
+                let newTop = event.clientY - offset.y;
+
+                // Get viewport dimensions
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+
+                // Boundary checks
+                if (newLeft < 0) newLeft = 0;
+                if (newTop < 0) newTop = 0;
+                if (newLeft + 350 > viewportWidth) newLeft = viewportWidth - 350; // Adjust based on minimized width
+                if (newTop + 200 > viewportHeight) newTop = viewportHeight - 200; // Adjust based on minimized height
+
+                // Update position
+                $scope.position.left = newLeft;
+                $scope.position.top = newTop;
+
+                // Apply the new position to the element
+                const videoCallMain = document.getElementById('video_call_main');
+                videoCallMain.style.left = newLeft + 'px';
+                videoCallMain.style.top = newTop + 'px';
+            });
+        }
+    }
+
+    function stopDrag() {
+        isDragging = false;
+        angular.element(window).off('mousemove', moveDrag);
+        angular.element(window).off('mouseup', stopDrag);
+    }
+}]);
+</script>
+
+
+
+
+
+   </body>
+</html>
+
